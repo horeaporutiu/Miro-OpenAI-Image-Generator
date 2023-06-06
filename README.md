@@ -5,6 +5,8 @@ App Demo below.
 This project aims to help you understand how to create integrations with the Miro REST API, specifically 
 around image generation using AI.
 
+## App Demo
+
 https://github.com/horeaporutiu/miro-developer-advocate-interview/assets/10428517/476673fb-da76-4ee8-af6a-035b6dc514c1
 
 # Steps 
