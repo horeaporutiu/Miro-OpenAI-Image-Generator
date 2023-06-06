@@ -15,7 +15,9 @@ https://github.com/horeaporutiu/miro-developer-advocate-interview/assets/1042851
 
 ## Step 1. Prerequisites
 
-First, clone this app: `git clone https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator.git`
+First, clone this app: 
+
+```git clone https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator.git```
 
 * Make sure you have a [Miro Account](https://miro.com/signup/).
 
@@ -23,7 +25,7 @@ First, clone this app: `git clone https://github.com/horeaporutiu/Miro-OpenAI-Im
 
 * Make sure you have a Miro Board. 
 
-* Make sure you have an OpenAI account and an OpenAI API Key. This is used for the image generation. 
+* Make sure you have an [OpenAI account](https://platform.openai.com/) and an [OpenAI API Key](https://platform.openai.com/account/api-keys). This is used for the image generation. 
 
 ## Step 2. App Configuration
 
