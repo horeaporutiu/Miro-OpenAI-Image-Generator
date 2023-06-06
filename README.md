@@ -1,13 +1,19 @@
 # Miro-OpenAI-Image-Generator
 
-App Demo below.
-
 This project aims to help you understand how to create integrations with the Miro REST API, specifically 
-around image generation using AI.
+around image generation using AI. Although this is using OpenAI APIs, you can change the back-end 
+code to easily use another service to generate images. 
 
 ## App Demo
 
 https://github.com/horeaporutiu/miro-developer-advocate-interview/assets/10428517/476673fb-da76-4ee8-af6a-035b6dc514c1
+
+## App Setup Video (5 Minutes)
+This video shows how to clone, configure, and run the app. It is a video version of the steps below.
+Click on the thumbnail to [watch this video on YouTube](https://www.youtube.com/watch?v=E9-GAzOzTQs
+).
+
+https://www.youtube.com/watch?v=E9-GAzOzTQs
 
 # Steps 
 1. [Prerequisites](#step-1-prerequisites)
