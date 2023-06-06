@@ -15,7 +15,7 @@ Click on the thumbnail to [watch this video on YouTube](https://www.youtube.com/
 
 <a href="https://www.youtube.com/watch?v=E9-GAzOzTQs">
 
-<img width="1440" alt="AppSetup" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/eb92de50-e8ae-47b5-ac63-4b919227919c">
+<img width="1440" alt="AppSetup" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/eb92de50-e8ae-47b5-ac63-4b919227919c"/>
 </a>
 
 # Steps 
