@@ -1,9 +1,16 @@
 const express = require("express")
 const dotenv = require("dotenv")
+const axios = require("axios")
 const { Configuration, OpenAIApi } = require("openai");
 
 dotenv.config()
 
+//BoardID needed for API request to Miro to add the image to a particular board
+const boardID = process.env.MIRO_BOARD_ID;
+//Token needed to authenticate to Miro API
+const token = process.env.MIRO_BEARER_TOKEN;
+
+//OpenAI API Key needed for OpenAI API request to create an image using AI
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -16,38 +23,54 @@ const port = 3000;
 
 app.post('/generate', async (req, res) => {
 
-	const prompt = req.body.prompt;
+  const prompt = req.body.prompt;
 
-	try {
-
-		//stable diffusion 1.5
-
-		//generate the image by passing in the prompt, using leap SDK
-		// const response = await leap.generate.generateImage({
-		// 	prompt: prompt,
-		// });
-    console.log(prompt)
+  try {
 
     const response = await openai.createImage({
       prompt: prompt,
     });
 
-		//send JSON response to front end, with the data being the image in this case
+    let url = response.data.data[0].url
+
+    let data = JSON.stringify({
+      "data": {
+        "url": url
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "origin": "center"
+      },
+    });
+
+    let config = {
+      method: 'post',
+      url: 'https://api.miro.com/v2/boards/' + boardID + '/images',
+      headers: { 
+        'Authorization': 'Bearer ' + token, 
+        'Content-Type': 'application/json', 
+      },
+      data: data
+    };
+    
+    const createMiroImageResponse = await axios.request(config)
+
+    console.log(JSON.stringify(createMiroImageResponse.data));
+
     res.status(200).json({
-    success: true,
-    // data: completion.data.choices[0].text
-    data: response.data.data[0].url
+      success: true,
+      data: url
+    }); 
 
-  });
-
-	} catch (error) {
-		console.log(error)
-		//send error to front end, so user can easily see that something went wrong
-		res.status(400).json({
-			success: false,
-			error: 'The image could not be generated'
-		});
-	}
+  } catch (error) {
+    console.log(error)
+    //send error to front end, so user can easily see that something went wrong
+    res.status(400).json({
+      success: false,
+      error: 'The image could not be generated'
+    });
+  }
 })
 
 app.listen(port);
