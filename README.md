@@ -40,9 +40,7 @@ Before you can run the app, you'll need to store some environment variables.
 
 1. Copy `.env.sample` to `.env`
 
-2. Install the Miro App to the team in which you want to use the OpenAI Image Generation. This will give you the Access token needed to use the Miro REST API. Add this to the `MIRO_BEARER_TOKEN` in the `.env` file.
-
-![accessTokenMiro](https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/9c1aa301-7998-447d-af93-8151f09ca51d)
+2. Install the Miro App to the team in which you want to use the OpenAI Image Generation. This is shown in [step 3 of the Miro Developer documentation](https://developers.miro.com/docs/rest-api-build-your-first-hello-world-app#step-3-install-the-app). This will give you the Access token needed to use the Miro REST API. Add this to the `MIRO_BEARER_TOKEN` in the `.env` file.
 
 3. Get your Miro Board ID by checking the URL of the board you want to use. Add this to the `MIRO_BOARD_ID`
 in the `.env` file. For example, mine is `uXjVMDe2nVY=/`
