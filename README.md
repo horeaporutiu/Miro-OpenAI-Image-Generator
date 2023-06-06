@@ -10,12 +10,15 @@ https://github.com/horeaporutiu/miro-developer-advocate-interview/assets/1042851
 
 ## App Setup Video (5 Minutes)
 This video shows how to clone, configure, and run the app. It is a video version of the steps below.
-Click on the thumbnail to [watch this video on YouTube](https://www.youtube.com/watch?v=E9-GAzOzTQs
-).
+Click on the thumbnail to [watch this video on YouTube](https://www.youtube.com/watch?v=E9-GAzOzTQs).
 
-<a href="https://www.youtube.com/watch?v=E9-GAzOzTQs">
+<!-- <a href="https://www.youtube.com/watch?v=E9-GAzOzTQs">
 
 <img width="1440" alt="AppSetup" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/eb92de50-e8ae-47b5-ac63-4b919227919c"/>
+</a> -->
+
+<a href="https://www.youtube.com/watch?v=E9-GAzOzTQs">
+<img src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/eb92de50-e8ae-47b5-ac63-4b919227919c" width="725" height="388" /> 
 </a>
 
 # Steps 
