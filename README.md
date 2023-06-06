@@ -12,15 +12,7 @@ https://github.com/horeaporutiu/miro-developer-advocate-interview/assets/1042851
 This video shows how to clone, configure, and run the app. It is a video version of the steps below.
 Click on the thumbnail to [watch this video on YouTube](https://www.youtube.com/watch?v=E9-GAzOzTQs).
 
-<iframe
-    width="640"
-    height="480"
-    src="https://www.youtube.com/embed/E9-GAzOzTQs"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
->
-</iframe>
+[![Video](https://img.youtube.com/vi/E9-GAzOzTQs/maxresdefault.jpg)](https://www.youtube.com/watch?v=E9-GAzOzTQs)
 
 # Steps 
 1. [Prerequisites](#step-1-prerequisites)
