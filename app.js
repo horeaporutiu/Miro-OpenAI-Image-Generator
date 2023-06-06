@@ -33,6 +33,27 @@ app.post('/generate', async (req, res) => {
 
     let url = response.data.data[0].url
 
+    res.status(200).json({
+      success: true,
+      data: url
+    });
+    
+  } catch (error) {
+    console.log(error)
+    //send error to front end, so user can easily see that something went wrong
+    res.status(400).json({
+      success: false,
+      error: 'The image could not be generated'
+    });
+  }
+})
+
+app.post('/addToMiro', async (req, res) => {
+
+  let url = req.body.imgUrl
+
+  try {
+
     let data = JSON.stringify({
       "data": {
         "url": url
@@ -56,12 +77,10 @@ app.post('/generate', async (req, res) => {
     
     const createMiroImageResponse = await axios.request(config)
 
-    console.log(JSON.stringify(createMiroImageResponse.data));
-
     res.status(200).json({
       success: true,
-      data: url
-    }); 
+      data:url
+    });
 
   } catch (error) {
     console.log(error)
