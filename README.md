@@ -13,7 +13,8 @@ This video shows how to clone, configure, and run the app. It is a video version
 Click on the thumbnail to [watch this video on YouTube](https://www.youtube.com/watch?v=E9-GAzOzTQs
 ).
 
-https://www.youtube.com/watch?v=E9-GAzOzTQs
+[https://private-user-images.githubusercontent.com/10428517/243843146-eb92de50-e8ae-47b5-ac63-4b919227919c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg2MDg5Mzk2LCJuYmYiOjE2ODYwODkwOTYsInBhdGgiOiIvMTA0Mjg1MTcvMjQzODQzMTQ2LWViOTJkZTUwLWU4YWUtNDdiNS1hYzYzLTRiOTE5MjI3OTE5Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNjA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDYwNlQyMjA0NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lMjdlZmMzY2VjN2U2ZGRmOGFkNWNjMTAzOWQwY2IyZGVjYzVmNDVjMjI1NWJiNWYzNzJmMTFhNTY5Mjk1MGMwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Fq_mnSACSPddHlgKHVq2bGiy5kyvFT_pd964COcUG8g](https://www.youtube.com/watch?v=E9-GAzOzTQs)
+
 
 # Steps 
 1. [Prerequisites](#step-1-prerequisites)
