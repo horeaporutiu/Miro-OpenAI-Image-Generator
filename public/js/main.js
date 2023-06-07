@@ -1,4 +1,74 @@
-//Function which runs when the prompt is submitted on the front end
+// Shows spinner while API calls are in progress
+function showSpinner() {
+  document.querySelector('.spinner').classList.add('show');
+}
+
+// Removes spinner when API calls are finished and data is returned
+function removeSpinner() {
+  document.querySelector('.spinner').classList.remove('show');
+}
+
+// Send the prompt to the front end, wait for the response,
+// and then display the image to the front end
+async function generateImageRequest(prompt) {
+  try {
+    showSpinner();
+
+    // Send prompt and wait for response from the back-end
+    const response = await fetch('/generate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        prompt,
+      }),
+    });
+
+    // If there is an error, remove spinner and throw and error
+    if (!response.ok) {
+      removeSpinner();
+      throw new Error('That image could not be generated');
+    }
+
+    const image = await response.json();
+    const imageUrl = image.data;
+
+    // Set the image source to be the URL generated from the OpenAI API call
+    document.querySelector('#image').src = imageUrl;
+
+    removeSpinner();
+    // Set the "Add to Miro" button once the image is displayed to the front end
+    document.getElementById('miroBtn').style.visibility = 'visible';
+  } catch (error) {
+    // print error to front end
+    document.querySelector('.msg').textContent = error;
+  }
+}
+
+// addToMiro function which sends imgUrl to backend for REST API call
+async function addToMiro(imgUrl) {
+  try {
+    showSpinner();
+
+    // Pass in the imageURL to the backend and make Miro REST API call
+    await fetch('/addToMiro', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        imgUrl,
+      }),
+    });
+
+    removeSpinner();
+  } catch (error) {
+    document.querySelector('.msg').textContent = error;
+  }
+}
+
+// Function which runs when the prompt is submitted on the front end
 function onSubmit(e) {
   e.preventDefault();
 
@@ -15,87 +85,13 @@ function onSubmit(e) {
   generateImageRequest(prompt);
 }
 
-//Send the prompt to the front end, wait for the response, and then display the image to the front end
-async function generateImageRequest(prompt) {
-  try {
-    showSpinner();
-
-    //Send prompt and wait for response from the back-end
-    const response = await fetch('/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        prompt
-      }),
-    });
-
-    //If there is an error, remove spinner and throw and error
-    if (!response.ok) {
-      removeSpinner();
-      throw new Error('That image could not be generated');
-    }
-
-    const image = await response.json();
-    const imageUrl = image.data;
-    
-    //Set the image source to be the URL generated from the OpenAI API call
-    document.querySelector('#image').src = imageUrl;
-
-    removeSpinner();
-    //Set the "Add to Miro" button once the image is displayed to the front end
-    document.getElementById('miroBtn').style.visibility = 'visible';
-
-  } catch (error) {
-    //print error to front end
-    document.querySelector('.msg').textContent = error;
-  }
-}
-
 // Add to Miro button handler
-document.getElementById("miroBtn").addEventListener("click", function () {
+document.getElementById('miroBtn').addEventListener('click', () => {
   const image = document.querySelector('#image');
-  let imgUrl = image.src
-  //pass in the image URL to the addToMiro function
+  const imgUrl = image.src;
+  // pass in the image URL to the addToMiro function
   addToMiro(imgUrl);
 });
-
-//addToMiro function which sends imgUrl to backend for REST API call
-async function addToMiro(imgUrl) {
-
-  try {
-
-    showSpinner();
-
-    // Pass in the imageURL to the backend and make Miro REST API call
-    const response = await fetch('/addToMiro', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        imgUrl
-      }),
-    });
-
-    removeSpinner();
-
-  } catch (error) {
-    document.querySelector('.msg').textContent = error;
-  }
-}
-
-
-//Shows spinner while API calls are in progress
-function showSpinner() {
-  document.querySelector('.spinner').classList.add('show');
-}
-
-//Removes spinner when API calls are finished and data is returned
-function removeSpinner() {
-  document.querySelector('.spinner').classList.remove('show');
-}
 
 document.querySelector('#imagePrompt').addEventListener('submit', onSubmit);
 document.getElementById('miroBtn').style.visibility = 'hidden';

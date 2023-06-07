@@ -18,5 +18,10 @@
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
   }
 }
