@@ -16,23 +16,30 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+//Set up Express app
 const app = express();
 app.use(express.json());
+//Use public directory for CSS, HTML, and JS
 app.use(express.static("public"));
 const port = 3000;
 
+//Function to generate images using OpenAI SDK
 app.post('/generate', async (req, res) => {
 
+  //grab prompt from the front end
   const prompt = req.body.prompt;
 
   try {
 
+    //use OpenAI SDK to generate image using the prompt from the front end
     const response = await openai.createImage({
       prompt: prompt,
     });
 
+    //the URL to the image we will display
     let url = response.data.data[0].url
 
+    //send url to front end to display the image
     res.status(200).json({
       success: true,
       data: url
@@ -48,12 +55,16 @@ app.post('/generate', async (req, res) => {
   }
 })
 
+//Function to make API call to Miro to add the Image to the Board
 app.post('/addToMiro', async (req, res) => {
 
+  //grab the URL from the front end
   let url = req.body.imgUrl
 
   try {
 
+    //Data to pass into the request body, specifically the URL and the position of where to place the image 
+    //on the Miro board
     let data = JSON.stringify({
       "data": {
         "url": url
@@ -65,6 +76,7 @@ app.post('/addToMiro', async (req, res) => {
       },
     });
 
+    //API call configuration, such as method, URL, and auth token needed to auth into the Miro REST API
     let config = {
       method: 'post',
       url: 'https://api.miro.com/v2/boards/' + boardID + '/images',
@@ -75,6 +87,7 @@ app.post('/addToMiro', async (req, res) => {
       data: data
     };
     
+    //response from API call
     const createMiroImageResponse = await axios.request(config)
 
     res.status(200).json({
