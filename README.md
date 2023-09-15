@@ -6,7 +6,7 @@ code to easily use another service to generate images.
 
 ## App Demo
 
-https://github.com/horeaporutiu/miro-developer-advocate-interview/assets/10428517/476673fb-da76-4ee8-af6a-035b6dc514c1
+https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/e7752ba2-ee1b-4e3f-9169-f20082a5bbf2
 
 ## App Setup Video (5 Minutes)
 This video shows how to clone, configure, and run the app. It is a video version of the steps below.
