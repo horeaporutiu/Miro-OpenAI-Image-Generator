@@ -70,7 +70,7 @@ in the `.env` file. For example, mine is `uXjVMkoJA2o=/` from the image below.
 
 You should see something like this:
 
-<img width="1440" alt="MiroAppHomePage" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/208926c8-b42c-4842-af52-f737af3b4248">
+<img width="504" alt="app-home-page" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/fd1b4b9a-dcdb-4dac-bfb4-e9095843d611">
 
 Go ahead and write out a prompt. Once the image is generated, feel free to `Add to Miro` as in the 
 [App Demo](https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator#app-demo) above.
