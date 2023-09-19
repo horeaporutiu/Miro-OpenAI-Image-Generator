@@ -6,7 +6,7 @@ code to easily use another service to generate images.
 
 ## App Demo
 
-https://github.com/horeaporutiu/miro-developer-advocate-interview/assets/10428517/476673fb-da76-4ee8-af6a-035b6dc514c1
+https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/e7752ba2-ee1b-4e3f-9169-f20082a5bbf2
 
 ## App Setup Video (5 Minutes)
 This video shows how to clone, configure, and run the app. It is a video version of the steps below.
@@ -50,11 +50,12 @@ Before you can run the app, you'll need to store some environment variables.
 2. Install the Miro App to the team in which you want to use the OpenAI Image Generation. This is shown in [step 3 of the Miro Developer documentation](https://developers.miro.com/docs/rest-api-build-your-first-hello-world-app#step-3-install-the-app). This will give you the Access token needed to use the Miro REST API. Add this to the `MIRO_BEARER_TOKEN` in the `.env` file.
 
 3. Get your Miro Board ID by checking the URL of the board you want to use. Add this to the `MIRO_BOARD_ID`
-in the `.env` file. For example, mine is `uXjVMDe2nVY=/`
+in the `.env` file. For example, mine is `uXjVMkoJA2o=/` from the image below.
 
-![boardID](https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/22cdb6b1-276a-466f-9d5e-8f19bf0a0990)
+<img width="486" alt="board-id-example" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/b6b2fc62-3fc2-4e0a-a968-3c7a5a7954d0">
 
-4. Grab your OpenAI API Key and add it to `OPENAI_API_KEY` in your `.env` file.
+
+5. Grab your OpenAI API Key and add it to `OPENAI_API_KEY` in your `.env` file.
 
 > Don't forget to save your `.env` and then run 
 ```source .env``` to set your env variables. 
@@ -69,7 +70,7 @@ in the `.env` file. For example, mine is `uXjVMDe2nVY=/`
 
 You should see something like this:
 
-<img width="1440" alt="MiroAppHomePage" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/208926c8-b42c-4842-af52-f737af3b4248">
+<img width="504" alt="app-home-page" src="https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator/assets/10428517/fd1b4b9a-dcdb-4dac-bfb4-e9095843d611">
 
 Go ahead and write out a prompt. Once the image is generated, feel free to `Add to Miro` as in the 
 [App Demo](https://github.com/horeaporutiu/Miro-OpenAI-Image-Generator#app-demo) above.
