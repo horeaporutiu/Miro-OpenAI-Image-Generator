@@ -1,7 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const axios = require('axios');
-const { Configuration, OpenAIApi } = require('openai');
+
+const OpenAI = require('openai')
 
 dotenv.config();
 
@@ -11,10 +12,11 @@ const boardID = process.env.MIRO_BOARD_ID;
 const token = process.env.MIRO_BEARER_TOKEN;
 
 // OpenAI API Key needed for OpenAI API request to create an image using AI
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
 });
-const openai = new OpenAIApi(configuration);
+
+console.log(openai)
 
 // Set up Express app
 const app = express();
@@ -30,12 +32,14 @@ app.post('/generate', async (req, res) => {
 
   try {
     // use OpenAI SDK to generate image using the prompt from the front end
-    const response = await openai.createImage({
+    const response = await openai.images.generate({
       prompt,
     });
 
+    console.log()
+
     // the URL to the image we will display
-    const { url } = response.data.data[0];
+    let url = response.data[0].url;
 
     // send url to front end to display the image
     res.status(200).json({

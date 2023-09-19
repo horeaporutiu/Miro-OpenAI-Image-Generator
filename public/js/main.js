@@ -24,10 +24,12 @@ async function generateImageRequest(prompt) {
         prompt,
       }),
     });
+    console.log(response)
 
     // If there is an error, remove spinner and throw and error
     if (!response.ok) {
       removeSpinner();
+      console.log(response)
       throw new Error('That image could not be generated');
     }
 
