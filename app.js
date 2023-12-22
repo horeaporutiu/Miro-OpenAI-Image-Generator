@@ -16,8 +16,6 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
 });
 
-console.log(openai)
-
 // Set up Express app
 const app = express();
 app.use(express.json());
@@ -35,8 +33,6 @@ app.post('/generate', async (req, res) => {
     const response = await openai.images.generate({
       prompt,
     });
-
-    console.log()
 
     // the URL to the image we will display
     let url = response.data[0].url;
